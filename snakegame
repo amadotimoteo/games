@@ -1,0 +1,37 @@
+import pygame
+import random
+import tkinter as tk
+from tkinter import messagebox
+
+
+# Configurações iniciais do Pygame
+def rodar_jogo():
+    pass
+
+
+def iniciar_jogo():
+    pygame.init()
+    largura, altura = 600, 400
+    global tela, relogio
+    tela = pygame.display.set_mode((largura, altura))
+    pygame.display.set_caption("Snake Game")
+    relogio = pygame.time.Clock()
+
+    # Cores
+    global preta, branca, vermelha, verde
+    preta = (0, 0, 0)
+    branca = (255, 255, 255)
+    vermelha = (255, 0, 0)
+    verde = (0, 255, 0)
+
+    # Parâmetros da cobrinha
+    global tamanho_quadrado, velocidade_jogo
+    tamanho_quadrado = 20
+    velocidade_jogo = 15
+
+    rodar_jogo()
+
+
+def gerar_comida(comida_=None):
+    comida_x = round(random.randrange(0, 600 - tamanho_quadrado) / float(tamanho_quadrado)) * float(tamanho_quadrado)
+    comida_
